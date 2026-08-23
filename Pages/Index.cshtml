@@ -1,10 +1,278 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vibrant Kochos — Reflexology, Coaching, Vitamins &amp; Frequency Healing</title>
+<meta name="description" content="Whole-person wellness: reflexology, coaching, vitamins and frequency healing with Vibrant Kochos." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@@0,9..144,500;0,9..144,650;1,9..144,600&family=DM+Sans:wght@@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --teal:#0C2B2A;
+  --teal-soft:#123B39;
+  --gold:#E7B24C;
+  --jade:#37A17C;
+  --paper:#F5EFE3;
+  --paper-dim:rgba(245,239,227,.72);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--teal);
+  color:var(--paper);
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:650;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 1.4rem}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(60rem 32rem at 80% -12%, rgba(55,161,124,.20), transparent 60%),
+    radial-gradient(46rem 26rem at 8% 108%, rgba(231,178,76,.10), transparent 60%),
+    var(--teal);
+  text-align:center;
+}
+.hero .wrap{position:relative;z-index:2;padding-top:5.5rem;padding-bottom:9rem;width:100%}
+.eyebrow{
+  display:inline-block;
+  font-size:.8rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(231,178,76,.45);
+  border-radius:999px;
+  padding:.45rem 1.1rem;
+  margin-bottom:1.6rem;
+}
+.hero h1{
+  font-size:clamp(2.9rem,8vw,5.4rem);
+  letter-spacing:-.01em;
+  margin-bottom:1rem;
+}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--gold)}
+.tagline{
+  max-width:34rem;
+  margin:0 auto 2.2rem;
+  font-size:clamp(1.05rem,2.4vw,1.25rem);
+  color:var(--paper-dim);
+}
+.btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--teal);
+  font-weight:600;
+  font-size:1.05rem;
+  text-decoration:none;
+  padding:.95rem 2.2rem;
+  border-radius:999px;
+  box-shadow:0 6px 24px rgba(231,178,76,.30);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(231,178,76,.42)}
+
+/* ---------- Resonance wave ---------- */
+.waves{
+  position:absolute;
+  inset:auto 0 0 0;
+  height:9.5rem;
+  z-index:1;
+  pointer-events:none;
+  overflow:hidden;
+}
+.wave-track{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:200%;
+  height:100%;
+  display:flex;
+  animation:drift 26s linear infinite;
+}
+.wave-track.slow{animation-duration:44s;opacity:.5;bottom:.9rem}
+.wave-track.slower{animation-duration:70s;opacity:.25;bottom:1.9rem}
+.wave-track svg{width:50%;height:100%;flex:none}
+@@keyframes drift{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Vibrant Kochos</h1>
-    <p class="lead">Your site is live. More coming soon.</p>
-</div>
+/* ---------- Sections ---------- */
+section{padding:5rem 0}
+.intro{text-align:center;background:var(--teal-soft)}
+.intro p{
+  font-family:"Fraunces",Georgia,serif;
+  font-size:clamp(1.3rem,3vw,1.7rem);
+  font-style:italic;
+  max-width:42rem;
+  margin:0 auto;
+  color:var(--paper);
+}
+.section-head{text-align:center;margin-bottom:3rem}
+.section-head h2{font-size:clamp(1.9rem,4.5vw,2.6rem);margin-bottom:.6rem}
+.section-head p{color:var(--paper-dim);max-width:32rem;margin:0 auto}
+
+/* ---------- Services ---------- */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:1.2rem;
+}
+.card{
+  background:var(--teal-soft);
+  border:1px solid rgba(245,239,227,.10);
+  border-radius:1.1rem;
+  padding:1.8rem 1.5rem;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(231,178,76,.45)}
+.card svg{width:2.4rem;height:2.4rem;stroke:var(--jade);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1rem}
+.card h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.25rem;margin-bottom:.5rem;color:var(--gold)}
+.card p{font-size:.97rem;color:var(--paper-dim)}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--teal-soft);text-align:center}
+.contact-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem;margin-top:2rem}
+.cbtn{
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  border:1.5px solid rgba(231,178,76,.55);
+  color:var(--paper);
+  text-decoration:none;
+  font-weight:500;
+  padding:.8rem 1.6rem;
+  border-radius:999px;
+  transition:background .18s ease,color .18s ease;
+}
+.cbtn:hover{background:var(--gold);color:var(--teal)}
+.cbtn svg{width:1.15rem;height:1.15rem;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Footer ---------- */
+footer{
+  text-align:center;
+  padding:2.4rem 1rem;
+  border-top:1px solid rgba(245,239,227,.10);
+  color:var(--paper-dim);
+  font-size:.9rem;
+}
+footer strong{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--paper)}
+
+@@media (max-width:600px){
+  section{padding:3.5rem 0}
+  .hero .wrap{padding-top:4rem;padding-bottom:8rem}
+}
+@@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .wave-track{animation:none}
+  .btn,.card,.cbtn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Reflexology &middot; Coaching &middot; Vitamins &middot; Frequency Healing</p>
+    <h1>Vibrant <em>Kochos</em></h1>
+    <p class="tagline">Restoring balance from the ground up — gentle, natural therapies that help your body find its own rhythm again.</p>
+    <a class="btn" href="#contact">Book a session</a>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <div class="wave-track slower">
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none"><path d="M0,60 C40,20 80,20 120,60 S200,100 240,60 S320,20 360,60 S440,100 480,60 S560,20 600,60" stroke="#37A17C" stroke-width="1.6" fill="none"/></svg>
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none"><path d="M0,60 C40,20 80,20 120,60 S200,100 240,60 S320,20 360,60 S440,100 480,60 S560,20 600,60" stroke="#37A17C" stroke-width="1.6" fill="none"/></svg>
+    </div>
+    <div class="wave-track slow">
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none"><path d="M0,55 C50,95 100,95 150,55 S250,15 300,55 S400,95 450,55 S550,15 600,55" stroke="#E7B24C" stroke-width="1.6" fill="none"/></svg>
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none"><path d="M0,55 C50,95 100,95 150,55 S250,15 300,55 S400,95 450,55 S550,15 600,55" stroke="#E7B24C" stroke-width="1.6" fill="none"/></svg>
+    </div>
+    <div class="wave-track">
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none"><path d="M0,58 C35,30 70,30 105,58 S175,86 210,58 S280,30 315,58 S385,86 420,58 S490,30 525,58 S595,86 600,58" stroke="#37A17C" stroke-width="2" fill="none" opacity=".85"/></svg>
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none"><path d="M0,58 C35,30 70,30 105,58 S175,86 210,58 S280,30 315,58 S385,86 420,58 S490,30 525,58 S595,86 600,58" stroke="#37A17C" stroke-width="2" fill="none" opacity=".85"/></svg>
+    </div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap">
+    <p>&ldquo;True wellness isn&rsquo;t one thing — it&rsquo;s body, mind, and energy moving in harmony.&rdquo;</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How we help</h2>
+      <p>Four gentle paths back to balance — used on their own or woven together.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20c-2 0-3.5-1.6-3.5-3.6 0-3.2 2.5-4.9 2.5-8.4C6 5 7.8 3 10 3s4 2 4 5c0 3.5 2.5 5.2 2.5 8.4 0 2-1.5 3.6-3.5 3.6"/><path d="M9 16.5h6"/></svg>
+        <h3>Reflexology</h3>
+        <p>Targeted pressure-point work on the feet that eases tension and supports the whole body&rsquo;s natural flow.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 1 7 7c0 2.4-1.2 4-2.5 5.5-.8.9-1 1.6-1 2.5h-7c0-.9-.2-1.6-1-2.5C6.2 14 5 12.4 5 10a7 7 0 0 1 7-7z"/><path d="M9.5 21h5"/></svg>
+        <h3>Coaching</h3>
+        <p>One-on-one guidance to untangle what&rsquo;s holding you back and set a clear, calm path forward.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="18" rx="4"/><path d="M8 12h8"/></svg>
+        <h3>Vitamins &amp; Supplements</h3>
+        <p>Personally matched, quality nutrients that fill the gaps and give your body what it&rsquo;s asking for.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h3l2-6 4 12 3-9 2 3h6"/></svg>
+        <h3>Frequency Healing</h3>
+        <p>Gentle vibrational sessions that help reset your energy and bring a deep sense of quiet and renewal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Begin your session</h2>
+      <p>Reach out — we&rsquo;ll find the right starting point together.</p>
+    </div>
+    <div class="contact-btns">
+      <a class="cbtn" href="tel:+15555550100">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        Call or text
+      </a>
+      <a class="cbtn" href="https://wa.me/15555550100">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 9.5c.5 3 3 5.5 6 6l1.5-1.5-2-1.5-1 .8a6.5 6.5 0 0 1-2.3-2.3l.8-1-1.5-2z"/></svg>
+        WhatsApp
+      </a>
+      <a class="cbtn" href="mailto:hello@@vibrantkochos.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Vibrant Kochos</strong> &nbsp;&middot;&nbsp; &copy; 2026
+</footer>
+
+</body>
+</html>
